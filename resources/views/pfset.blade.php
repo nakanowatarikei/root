@@ -28,15 +28,15 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">instagramのURL</label>
-            <input type="url" class="form-control" id="exampleInputEmail1" placeholder="instagram" name="Password">
+            <input type="url" class="form-control" id="exampleInputEmail1" placeholder="instagram" name="instagram">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">QiitaのURL</label>
-            <input type="url" class="form-control" id="exampleInputEmail1" placeholder="Qiita" name="Password">
+            <input type="url" class="form-control" id="exampleInputEmail1" placeholder="Qiita" name="qiita">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">プロフィール説明文</label>
-            <textarea class="form-control" rows="3" placeholder="プロフィール説明文" name="Password"></textarea>
+            <textarea class="form-control" rows="3" placeholder="プロフィール説明文" name="profile"></textarea>
         </div>
         <div class="form-group">
             <label for="exampleInputFile">プロフィール画像</label>
