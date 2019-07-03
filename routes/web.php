@@ -18,3 +18,28 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// プロフィール登録のポストルート定義
+Route::post('/pfsets', function (Request $request) {
+    //バリデーション
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:64',
+        'email' => 'required|max:256',
+        'Password' => 'required|max:64',
+        'image' => 'required',
+        'twtter' => 'required',
+        'facebook' => 'required',
+        'instagram' => 'instagram',
+        'image' => 'required',
+        'qiita' => 'required',
+        'profile' => 'required',
+    ]);
+
+    //バリデーション:エラー 
+    if ($validator->fails()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    }
+    //以下に登録処理を記述（Eloquentモデル）
+});
