@@ -18,9 +18,30 @@ class PfsetsController extends Controller
         'facebook' => 'required',
         'instagram' => 'instagram',
         'image' => 'required',
+                // アップロードされたファイルであること
+                'file',
+                // 画像ファイルであること
+                'image',
+                // MIMEタイプを指定
+                'mimes:jpeg,png',
         'qiita' => 'required',
         'profile' => 'required',
     ]);
+    // 画像をpublic/avatarに保存するファイルさえも作成するようにする
+    if ($request->file('image')->isValid([])) {
+        $filename = $request->file->store('public/avatar');
+
+        $user = User::find(auth()->id());
+        $user->avatar_filename = basename($filename);
+        $user->save();
+
+        return redirect('/home')->with('success', '保存しました。');
+    } else {
+        return redirect()
+            ->back()
+            ->withInput()
+            ->withErrors(['image' => '画像がアップロードされていないか不正なデータです。']);
+    }
 
     //バリデーション:エラー 
     if ($validator->fails()) {
