@@ -35,7 +35,7 @@ class PfsetsController extends Controller
         $user->avatar_filename = basename($filename);
         $user->save();
 
-        return redirect('/home')->with('success', '保存しました。');
+        return redirect('/pfsets')->with('success', '保存しました。');
     } else {
         return redirect()
             ->back()
