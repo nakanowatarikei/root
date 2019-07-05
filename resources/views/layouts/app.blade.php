@@ -77,6 +77,5 @@
         </main>
         
     </div>
-    <!-- @yield('home.js') -->
 </body>
 </html>
