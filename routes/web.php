@@ -12,12 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('pfset');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-// プロフィール登録のポストルート定義
-Route::post('/pfsets', 'PfsetsController@index');
