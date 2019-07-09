@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -65,7 +66,13 @@
                                         @csrf
                                     </form>
                                 </div>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('pfsets') }}">
+                                    {{ __('Edit Profile') }}
+                                    </a>
+                                </div> 
                             </li>
+                            
                         @endguest
                     </ul>
                 </div>

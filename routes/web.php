@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/pfsets', function () {
     return view('pfset');
 });
 
