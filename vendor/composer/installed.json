@@ -507,17 +507,17 @@
     },
     {
         "name": "filp/whoops",
-        "version": "2.4.0",
-        "version_normalized": "2.4.0.0",
+        "version": "2.4.1",
+        "version_normalized": "2.4.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/filp/whoops.git",
-            "reference": "1a1a1044ad00e285bd2825fac4c3a0443d90ad33"
+            "reference": "6fb502c23885701a991b0bba974b1a8eb6673577"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/filp/whoops/zipball/1a1a1044ad00e285bd2825fac4c3a0443d90ad33",
-            "reference": "1a1a1044ad00e285bd2825fac4c3a0443d90ad33",
+            "url": "https://api.github.com/repos/filp/whoops/zipball/6fb502c23885701a991b0bba974b1a8eb6673577",
+            "reference": "6fb502c23885701a991b0bba974b1a8eb6673577",
             "shasum": ""
         },
         "require": {
@@ -533,7 +533,7 @@
             "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
             "whoops/soap": "Formats errors as SOAP responses"
         },
-        "time": "2019-06-23T09:00:00+00:00",
+        "time": "2019-07-04T09:00:00+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -763,6 +763,41 @@
         "description": "Highlight PHP code in terminal"
     },
     {
+        "name": "kanazaca/counter-cache",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kanazaca/counter-cache.git",
+            "reference": "78212cbddd444546a4647c10242dea5131a02767"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kanazaca/counter-cache/zipball/78212cbddd444546a4647c10242dea5131a02767",
+            "reference": "78212cbddd444546a4647c10242dea5131a02767",
+            "shasum": ""
+        },
+        "time": "2016-05-25T01:35:59+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "kanazaca\\CounterCache\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Hugo Neto",
+                "email": "hugo.neto@grandesplanos.com"
+            }
+        ],
+        "description": "Package for Laravel to implement counter cache"
+    },
+    {
         "name": "laravel/framework",
         "version": "v5.8.27",
         "version_normalized": "5.8.27.0",
@@ -977,28 +1012,98 @@
         ]
     },
     {
-        "name": "league/flysystem",
-        "version": "1.0.53",
-        "version_normalized": "1.0.53.0",
+        "name": "laravelcollective/html",
+        "version": "5.8.x-dev",
+        "version_normalized": "5.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/thephpleague/flysystem.git",
-            "reference": "08e12b7628f035600634a5e76d95b5eb66cea674"
+            "url": "https://github.com/LaravelCollective/html.git",
+            "reference": "b3b35b61433e77d8673e51e3b99183d2db4621c1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/08e12b7628f035600634a5e76d95b5eb66cea674",
-            "reference": "08e12b7628f035600634a5e76d95b5eb66cea674",
+            "url": "https://api.github.com/repos/LaravelCollective/html/zipball/b3b35b61433e77d8673e51e3b99183d2db4621c1",
+            "reference": "b3b35b61433e77d8673e51e3b99183d2db4621c1",
             "shasum": ""
         },
         "require": {
-            "ext-fileinfo": "*",
+            "illuminate/http": "5.8.*",
+            "illuminate/routing": "5.8.*",
+            "illuminate/session": "5.8.*",
+            "illuminate/support": "5.8.*",
+            "illuminate/view": "5.8.*",
+            "php": ">=7.1.3"
+        },
+        "require-dev": {
+            "illuminate/database": "5.8.*",
+            "mockery/mockery": "~1.0",
+            "phpunit/phpunit": "~7.1"
+        },
+        "time": "2019-03-03T20:06:51+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.8-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Collective\\Html\\HtmlServiceProvider"
+                ],
+                "aliases": {
+                    "Form": "Collective\\Html\\FormFacade",
+                    "Html": "Collective\\Html\\HtmlFacade"
+                }
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Collective\\Html\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            },
+            {
+                "name": "Adam Engebretson",
+                "email": "adam@laravelcollective.com"
+            }
+        ],
+        "description": "HTML and Form Builders for the Laravel Framework",
+        "homepage": "https://laravelcollective.com"
+    },
+    {
+        "name": "league/flysystem",
+        "version": "1.0.46",
+        "version_normalized": "1.0.46.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/flysystem.git",
+            "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+            "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+            "shasum": ""
+        },
+        "require": {
             "php": ">=5.5.9"
         },
         "conflict": {
             "league/flysystem-sftp": "<1.0.6"
         },
         "require-dev": {
+            "ext-fileinfo": "*",
             "phpspec/phpspec": "^3.4",
             "phpunit/phpunit": "^5.7.10"
         },
@@ -1018,7 +1123,7 @@
             "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
             "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
         },
-        "time": "2019-06-18T20:09:29+00:00",
+        "time": "2018-08-22T07:45:22+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2144,17 +2249,17 @@
     },
     {
         "name": "phpunit/php-token-stream",
-        "version": "3.0.1",
-        "version_normalized": "3.0.1.0",
+        "version": "3.0.2",
+        "version_normalized": "3.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-            "reference": "c99e3be9d3e85f60646f152f9002d46ed7770d18"
+            "reference": "c4a66b97f040e3e20b3aa2a243230a1c3a9f7c8c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/c99e3be9d3e85f60646f152f9002d46ed7770d18",
-            "reference": "c99e3be9d3e85f60646f152f9002d46ed7770d18",
+            "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/c4a66b97f040e3e20b3aa2a243230a1c3a9f7c8c",
+            "reference": "c4a66b97f040e3e20b3aa2a243230a1c3a9f7c8c",
             "shasum": ""
         },
         "require": {
@@ -2164,7 +2269,7 @@
         "require-dev": {
             "phpunit/phpunit": "^7.0"
         },
-        "time": "2018-10-30T05:52:18+00:00",
+        "time": "2019-07-08T05:24:54+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

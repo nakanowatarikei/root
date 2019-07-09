@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +20,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -65,7 +69,13 @@
                                         @csrf
                                     </form>
                                 </div>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('pfsets') }}">
+                                    {{ __('Edit Profile') }}
+                                    </a>
+                                </div> 
                             </li>
+                            
                         @endguest
                     </ul>
                 </div>
@@ -77,6 +87,12 @@
         </main>
         
     </div>
+
     @yield('homeJs')
+
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script type="text/javascript" src="{{ asset('js/record.js') }}"></script>
+
+
 </body>
 </html>
