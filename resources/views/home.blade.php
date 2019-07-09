@@ -16,8 +16,13 @@
                     @endif
 
                     <!-- プロフィール上部 -->
-                    <h2>{{Auth::user()->name}}</h2>
-                    <p>Profile:{{Auth::user()->profile}}</p>
+                    <div style="display:flex; ">
+                        <img src="{{ asset('profile.png') }}" alt="">
+                        <div style="display:flex; align-items: center;">
+                            <h2>{{Auth::user()->name}}</h2>
+                        </div>
+                    </div><br>
+                    <p>{{Auth::user()->profile}}</p>
 
                     <!-- SNSリンク -->
                     <!-- SNSリンクがnullであればグレースケール -->
@@ -45,12 +50,12 @@
                         @else
                         <a href="{{Auth::user() ->qiita}}"><img src="{{ asset('sns/qiita.png') }}" alt="qiita" id='qiita' class='sns'></a>
                         @endif
-                    </div>
+                    </div><br>
 
                     <!-- urlシェア部分 -->
                     <div>
                         <input id="copyTarget" type="text" value='<?php echo("http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>' readonly>
-                        <button onclick="copyToClipboard()" style="cursor:pointer">Copy URL</button>
+                        <button onclick="copyToClipboard()" style="cursor:pointer">Copy this page!!</button>
                     </div>
                 </div>
                 
