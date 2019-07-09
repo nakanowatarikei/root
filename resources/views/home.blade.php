@@ -15,45 +15,48 @@
                     @endif
 
                     <!-- プロフィール上部 -->
-                    <p>{{Auth::user()->name}}</p>
+                    <h2>{{Auth::user()->name}}</h2>
                     <p>Profile:{{Auth::user()->profile}}</p>
 
 
                     <!-- SNSリンク -->
                     <!-- SNSリンクがnullであればグレースケール -->
-                    @if(Auth::user()->twitter == "")
-                    <a href="{{Auth::user() ->twitter}}"><img src="{{ asset('sns/twitter_g.png') }}" alt="twitter" id='twitter' class='sns'></a>
-                    @else
-                    <a href="{{Auth::user() ->twitter}}"><img src="{{ asset('sns/twitter.png') }}" alt="twitter" id='twitter' class='sns'></a>
-                    @endif
+                    <div>
+                        @if(Auth::user()->twitter == "")
+                        <a href="{{Auth::user() ->twitter}}"><img src="{{ asset('sns/twitter_g.png') }}" alt="twitter" id='twitter' class='sns'></a>
+                        @else
+                        <a href="{{Auth::user() ->twitter}}"><img src="{{ asset('sns/twitter.png') }}" alt="twitter" id='twitter' class='sns'></a>
+                        @endif
 
-                    @if(Auth::user()->facebook == "")
-                    <a href="{{Auth::user() ->facebook}}"><img src="{{ asset('sns/facebook_g.png') }}" alt="facebook" id='facebook' class='sns'></a>
-                    @else
-                    <a href="{{Auth::user() ->facebook}}"><img src="{{ asset('sns/facebook.png') }}" alt="facebook" id='facebook' class='sns'></a>
-                    @endif
+                        @if(Auth::user()->facebook == "")
+                        <a href="{{Auth::user() ->facebook}}"><img src="{{ asset('sns/facebook_g.png') }}" alt="facebook" id='facebook' class='sns'></a>
+                        @else
+                        <a href="{{Auth::user() ->facebook}}"><img src="{{ asset('sns/facebook.png') }}" alt="facebook" id='facebook' class='sns'></a>
+                        @endif
 
-                    @if(Auth::user()->instagram == "")
-                    <a href="{{Auth::user() ->instagram}}"><img src="{{ asset('sns/instagram_g.png') }}" alt="instagram" id='instagram' class='sns'></a>
-                    @else
-                    <a href="{{Auth::user() ->instagram}}"><img src="{{ asset('sns/instagram.png') }}" alt="instagram" id='instagram' class='sns'></a>
-                    @endif
+                        @if(Auth::user()->instagram == "")
+                        <a href="{{Auth::user() ->instagram}}"><img src="{{ asset('sns/instagram_g.png') }}" alt="instagram" id='instagram' class='sns'></a>
+                        @else
+                        <a href="{{Auth::user() ->instagram}}"><img src="{{ asset('sns/instagram.png') }}" alt="instagram" id='instagram' class='sns'></a>
+                        @endif
 
-                    @if(Auth::user()->qiita == "")
-                    <a href="{{Auth::user() ->qiita}}"><img src="{{ asset('sns/qiita_g.png') }}" alt="qiita" id='qiita' class='sns'></a>
-                    @else
-                    <a href="{{Auth::user() ->qiita}}"><img src="{{ asset('sns/qiita.png') }}" alt="qiita" id='qiita' class='sns'></a>
-                    @endif
+                        @if(Auth::user()->qiita == "")
+                        <a href="{{Auth::user() ->qiita}}"><img src="{{ asset('sns/qiita_g.png') }}" alt="qiita" id='qiita' class='sns'></a>
+                        @else
+                        <a href="{{Auth::user() ->qiita}}"><img src="{{ asset('sns/qiita.png') }}" alt="qiita" id='qiita' class='sns'></a>
+                        @endif
+                    </div>
 
                     <!-- urlシェア部分 -->
+                    <div>
                     <input id="copyTarget" type="text" value='<?php echo("http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>' readonly>
-
                     <button onclick="copyToClipboard()" style="cursor:pointer">Copy URL</button>
+                    </div>
 
 
                     <!-- メッセージテーブル -->
                     @foreach ($messages as $val)
-                        <div>
+                        <table class="table table-striped">
                             <tr>
                                 <td>{{$val->sender_name}}</td>
                                 <td>{{$val->message_data}}</td>
@@ -62,7 +65,7 @@
                                 <td>{{$val->created_at}}</td>
                                 
                             </tr>
-                        </div>
+                        </table>
                     @endforeach
 
 
