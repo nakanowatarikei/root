@@ -31,7 +31,7 @@ class PfsetsController extends Controller
     if ($request->file('image')->isValid([])) {
         $filename = $request->file->store('public/avatar');
 
-        $user = User::find(auth()->id());
+        $user = User::find(auth()->id()); 
         $user->avatar_filename = basename($filename);
         $user->save();
 
