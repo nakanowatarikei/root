@@ -20,7 +20,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- <link href="{{ asset('/css/style.css') }}" rel="stylesheet"> -->
+    @if(Request::is('message'))
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    @endif
+    
 
 </head>
 <body>
