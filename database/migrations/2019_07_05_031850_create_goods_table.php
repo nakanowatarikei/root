@@ -15,10 +15,10 @@ class CreateGoodsTable extends Migration
     {
         Schema::create('goods', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('message_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('message_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('messsage_id')->references('id')->on('messages');
+            $table->foreign('message_id')->references('id')->on('messages');
             $table->timestamps();
         });
     }
