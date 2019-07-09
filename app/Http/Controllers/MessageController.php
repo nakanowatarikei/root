@@ -12,19 +12,13 @@ class MessageController extends Controller
   public function index(Request $request)
   {
     $request->file('audio_data')->store('voice');
+    $messages = new Message;
+    $messages->message_data = $request->audio_data;
+    $messages->save();
 
-  //   $validator = Validator::make($request->all(), [
-  //     'audio_data' => 'required|mimes:mpga,wav',
-  // ]);
+    // $message = Message::find(auth()->id());
+    // $message->save();
 
-  // if($validator->fails()){
-  //     return redirect()->back()->withErrors($validator)->withInput();
-  //     echo 'validation passed';
-
-  // }
-
-  // ///save audio, etc
-  // echo 'validation passed';
 }
   
 }
