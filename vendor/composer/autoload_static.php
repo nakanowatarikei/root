@@ -405,11 +405,8 @@ class ComposerStaticInite21ce8774c1ceb16d7bf10a0c2cfadf2
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\GoodsController' => __DIR__ . '/../..' . '/app/Http/Controllers/GoodsController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-<<<<<<< HEAD
         'App\\Http\\Controllers\\PfsetsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PfsetsController.php',
-=======
         'App\\Http\\Controllers\\MessagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessagesController.php',
->>>>>>> DBset
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
