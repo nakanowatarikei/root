@@ -17,7 +17,12 @@
 
                     <!-- プロフィール上部 -->
                     <div style="display:flex; ">
-                        <img src="{{ asset('profile.png') }}" alt="">
+                        @if(Auth::user()->image == "")
+                            <img src="{{ asset('profile.png') }}" alt="">
+                        @else
+                            
+                        @endif
+                        
                         <div style="display:flex; align-items: center;">
                             <h2>{{Auth::user()->name}}</h2>
                         </div>
@@ -65,6 +70,7 @@
                         <table class="table table-striped">
                             <tr>
                                 <td>{{$val->sender_name}}</td>
+                                <td><img src="{{ asset('megaphone.png') }}" style="height:32px; width:32px;"></td>
                                 <td>{{$val->message_data}}</td>
                                 <td>{{$val->good}}</td>
                                 <td>{{$val->bad}}</td>
