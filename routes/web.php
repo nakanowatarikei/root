@@ -15,6 +15,7 @@ Route::get('/pfsets', function () {
     return view('pfset');
 });
 
+<<<<<<< HEAD
 
 Auth::routes();
 
@@ -22,3 +23,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // プロフィール登録のポストルート定義
 Route::post('/pfsets', 'PfsetsController@index');
+=======
+Route::get('/show', 'MessagesController@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/messages/{message}/goods', 'GoodsController@store');
+Route::post('/messages/{message}/goods/{good}', 'GoodsController@destroy');
+>>>>>>> DBset
