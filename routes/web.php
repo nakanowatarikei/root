@@ -15,7 +15,14 @@ Route::get('/pfsets', function () {
     return view('pfset');
 });
 
-Route::get('/show', 'MessagesController@show');
+
+Route::get('/message', function () {
+  return view('message');
+});
+
+Route::any('/upload','MessageController@index');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

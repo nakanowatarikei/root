@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+
 use Auth;
 use App\Good;
 
@@ -25,4 +26,5 @@ class Message extends Model
     {
       return Good::where('user_id', Auth::user()->id)->first();
     }
+
 }
