@@ -87,8 +87,12 @@
         </main>
         
     </div>
+
+    @yield('homeJs')
+
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script type="text/javascript" src="{{ asset('js/record.js') }}"></script>
+
 
 </body>
 </html>

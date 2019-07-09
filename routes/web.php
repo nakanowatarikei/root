@@ -16,6 +16,7 @@ Route::get('/pfsets', function () {
 });
 
 
+
 Route::get('/message', function () {
   return view('message');
 });
@@ -23,8 +24,18 @@ Route::get('/message', function () {
 Route::any('/upload','MessageController@index');
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@list')->name('home');
+
+
+// プロフィール登録のポストルート定義
+Route::post('/pfsets', 'PfsetsController@index');
+
+
 Route::post('/messages/{message}/goods', 'GoodsController@store');
 Route::post('/messages/{message}/goods/{good}', 'GoodsController@destroy');
+

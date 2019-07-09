@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Message;
 
 class HomeController extends Controller
 {
@@ -24,6 +26,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-
     }
+
+    public function list(Request $request)
+    {
+    # messageテーブルを取得
+    $messages = DB::select('select * from messages ORDER BY created_at');
+    return view('home', ['messages' => $messages]);
+}
 }
