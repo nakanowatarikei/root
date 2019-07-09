@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('pfset');
 });
 
+Route::get('/message', function () {
+  return view('message');
+});
+
+Route::any('/upload','MessageController@index');
 
 Auth::routes();
 
