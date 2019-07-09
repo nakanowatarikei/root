@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container">    
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">My Page</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                <div class="jumbotron">
+                    @if(session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
@@ -17,7 +18,6 @@
                     <!-- プロフィール上部 -->
                     <h2>{{Auth::user()->name}}</h2>
                     <p>Profile:{{Auth::user()->profile}}</p>
-
 
                     <!-- SNSリンク -->
                     <!-- SNSリンクがnullであればグレースケール -->
@@ -49,10 +49,11 @@
 
                     <!-- urlシェア部分 -->
                     <div>
-                    <input id="copyTarget" type="text" value='<?php echo("http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>' readonly>
-                    <button onclick="copyToClipboard()" style="cursor:pointer">Copy URL</button>
+                        <input id="copyTarget" type="text" value='<?php echo("http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>' readonly>
+                        <button onclick="copyToClipboard()" style="cursor:pointer">Copy URL</button>
                     </div>
-
+                </div>
+                
 
                     <!-- メッセージテーブル -->
                     @foreach ($messages as $val)
@@ -63,16 +64,17 @@
                                 <td>{{$val->good}}</td>
                                 <td>{{$val->bad}}</td>
                                 <td>{{$val->created_at}}</td>
-                                
                             </tr>
                         </table>
                     @endforeach
-
-
-
                 </div>
             </div>
         </div>
+    </div>
+    
+    <!-- 録音ボタン -->
+    <div class="fixed-bottom">
+    <a href=""><img src="{{ asset('record.png') }}" style="width:64px; height:64px; margin-left:60px; margin-bottom:30px;"></a>
     </div>
 </div>
 @endsection
