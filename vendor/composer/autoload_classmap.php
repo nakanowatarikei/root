@@ -17,12 +17,9 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\GoodsController' => $baseDir . '/app/Http/Controllers/GoodsController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
-
-
-    'App\\Http\\Controllers\\PfsetsController' => $baseDir . '/app/Http/Controllers/Auth/PfsetsController.php',
-
+    'App\\Http\\Controllers\\MessageController' => $baseDir . '/app/Http/Controllers/MessageController.php',
     'App\\Http\\Controllers\\MessagesController' => $baseDir . '/app/Http/Controllers/MessagesController.php',
-
+    'App\\Http\\Controllers\\PfsetsController' => $baseDir . '/app/Http/Controllers/Auth/PfsetsController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -459,6 +456,7 @@ return array(
     'Faker\\Provider\\it_IT\\Payment' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/it_IT/Payment.php',
     'Faker\\Provider\\it_IT\\Person' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/it_IT/Person.php',
     'Faker\\Provider\\it_IT\\PhoneNumber' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/it_IT/PhoneNumber.php',
+    'Faker\\Provider\\it_IT\\Text' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/it_IT/Text.php',
     'Faker\\Provider\\ja_JP\\Address' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Address.php',
     'Faker\\Provider\\ja_JP\\Company' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Company.php',
     'Faker\\Provider\\ja_JP\\Internet' => $vendorDir . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Internet.php',

@@ -19,7 +19,7 @@ class Message extends Model
 
     public function goods()
     {
-      return $this->hasMany('App\Like');
+      return $this->hasMany('App\Good');
     }
 
     public function good_by()

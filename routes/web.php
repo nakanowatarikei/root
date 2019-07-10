@@ -30,12 +30,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@list')->name('home');
-
+// Route::get('/home', 'MessagesController@show')->name('home');
 
 // プロフィール登録のポストルート定義
 Route::post('/pfsets', 'PfsetsController@index');
 
 
-Route::post('/messages/{message}/goods', 'GoodsController@store');
-Route::post('/messages/{message}/goods/{good}', 'GoodsController@destroy');
+Route::any('/messages/{message}/goods', 'GoodsController@store');
+Route::any('/messages/{message}/goods/{good}', 'GoodsController@destroy');
 

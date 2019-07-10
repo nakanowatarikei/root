@@ -405,10 +405,9 @@ class ComposerStaticInite21ce8774c1ceb16d7bf10a0c2cfadf2
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\GoodsController' => __DIR__ . '/../..' . '/app/Http/Controllers/GoodsController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\PfsetsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PfsetsController.php',
-
+        'App\\Http\\Controllers\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessageController.php',
         'App\\Http\\Controllers\\MessagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/MessagesController.php',
-
+        'App\\Http\\Controllers\\PfsetsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PfsetsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -845,6 +844,7 @@ class ComposerStaticInite21ce8774c1ceb16d7bf10a0c2cfadf2
         'Faker\\Provider\\it_IT\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/Payment.php',
         'Faker\\Provider\\it_IT\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/Person.php',
         'Faker\\Provider\\it_IT\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/PhoneNumber.php',
+        'Faker\\Provider\\it_IT\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/Text.php',
         'Faker\\Provider\\ja_JP\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Address.php',
         'Faker\\Provider\\ja_JP\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Company.php',
         'Faker\\Provider\\ja_JP\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Internet.php',

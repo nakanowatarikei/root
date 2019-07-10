@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">My Page</div>
+                <div class="card-header">マイページ</div>
 
                 <div class="card-body">
                 <div class="jumbotron">
@@ -60,7 +60,7 @@
                     <!-- urlシェア部分 -->
                     <div>
                         <input id="copyTarget" type="text" value='<?php echo("http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>' readonly>
-                        <button onclick="copyToClipboard()" style="cursor:pointer">Copy this page!!</button>
+                        <button onclick="copyToClipboard()" style="cursor:pointer">URLをコピーする</button>
                     </div>
                 </div>
                 
@@ -72,8 +72,10 @@
                                 <td>{{$val->sender_name}}</td>
                                 <td><img src="{{ asset('megaphone.png') }}" style="height:32px; width:32px;"></td>
                                 <td>{{$val->message_data}}</td>
-                                <td>{{$val->good}}</td>
-                                <td>{{$val->bad}}</td>
+                                <td><a href="" class="btn btn-danger">♥</a></td>
+                                <td>
+                                    <a href="" class="btn btn-primary">♡</a>
+                                </td>
                                 <td>{{$val->created_at}}</td>
                             </tr>
                         </table>
@@ -85,7 +87,7 @@
     
     <!-- 録音ボタン -->
     <div class="fixed-bottom">
-    <a href=""><img src="{{ asset('record.png') }}" style="width:64px; height:64px; margin-left:60px; margin-bottom:30px;"></a>
+    <a href="/message"><img src="{{ asset('record.png') }}" style="width:64px; height:64px; margin-left:60px; margin-bottom:30px;"></a>
     </div>
 </div>
 @endsection
