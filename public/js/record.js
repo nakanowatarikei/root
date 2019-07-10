@@ -51,7 +51,7 @@ function startRecording() {
 		audioContext = new AudioContext();
 
 		//update the format 
-		document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz"
+		// document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz"
 
 		/*  assign to gumStream for later use  */
 		gumStream = stream;
@@ -95,6 +95,7 @@ function stopRecording() {
 	//tell the recorder to stop the recording
 	rec.stop();
   recordButton.innerHTML="録り直す↺";
+  document.getElementById('abc').style.visibility ="visible";
 
 	//stop microphone access
 	gumStream.getAudioTracks()[0].stop();
@@ -127,17 +128,21 @@ function createDownloadLink(blob) {
 	li.appendChild(au);
 	
 	//add the filename to the li
-	li.appendChild(document.createTextNode(filename+".wav "));
+	// li.appendChild(document.createTextNode(filename+".wav "));
 
 	//add the save to disk link to li
-	li.appendChild(link);
+	// li.appendChild(link);
 	
 	//upload link
-	var upload = document.createElement('a');
+	var upload = document.getElementById('abc');
 	upload.href="#";
-	upload.innerHTML = "送信する";
+	upload.innerHTML = "エールを送る";
 	upload.addEventListener("click", function(event){
-		  var xhr=new XMLHttpRequest();
+    var res = confirm("エールを送信しますか");
+    if( res == true ) {
+        // OKなら
+        // window.location.href = "https://www.nishishi.com/";
+        var xhr=new XMLHttpRequest();
 		  xhr.onload=function(e) {
 		      if(this.readyState === 4) {
 		          console.log("Server returned: ",e.target.responseText);
@@ -148,11 +153,22 @@ function createDownloadLink(blob) {
 		  fd.append("audio_data",blob, filename);
       xhr.open("POST","upload",true);
       xhr.setRequestHeader('X-CSRF-Token', token);
-		  xhr.send(fd);
+      xhr.send(fd);
+      alert("エールを送信しました");
+
+
+
+    }
+    else {
+    }
+
+
+		  
 	})
-	li.appendChild(document.createTextNode (" "));//add a space in between
-	li.appendChild(upload);//add the upload link to li
+	// li.appendChild(document.createTextNode (" "));//add a space in between
+  // li.appendChild(upload);//add the upload link to li
+
 
 	//add the li element to the ol
-	recordingsList.appendChild(li);
+	// recordingsList.appendChild(li);
 }
