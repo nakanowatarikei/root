@@ -71,7 +71,7 @@
                             <tr>
                                 <td>{{$val->sender_name}}</td>
                                 <td><img src="{{ asset('megaphone.png') }}" style="height:32px; width:32px;"></td>
-                                <td>{{$val->message_data}}</td>
+                                <td><audio src = "/storage/{{$val->message_data}}" controls></td>
                                 <td><a href="" class="btn btn-danger">♥</a></td>
                                 <td>
                                     <a href="" class="btn btn-primary">♡</a>

@@ -13,14 +13,13 @@ class MessageController extends Controller
 {
   public function index(Request $request)
   {
-    $request->file('audio_data')->store('voice');
+    $audioFilename = $request->file('audio_data')->store('public');
     $messages = new Message;
     $messages->sender_id = Auth::user()->id;
     $messages->sender_name = Auth::user()->name;
-    $messages->message_data = $request->file('audio_data');
+    $messages->message_data = basename($audioFilename);
     $messages->receiver_id = 0;
     $messages->save();
-    return redirect('/home');
 
     // $message = Message::find(auth()->id());
     // $message->save();

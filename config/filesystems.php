@@ -53,6 +53,14 @@ return [
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+            'permissions' => [ // permissions 設定値を追記
+                'dir' => [
+                    'public'  => 0775, // public なディレクトリは775で作成 
+                ],
+                'file' => [
+                    'public' => 0664, // public なファイルは664で作成
+                ],
+            ]
         ],
 
         's3' => [

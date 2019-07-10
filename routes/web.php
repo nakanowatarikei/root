@@ -21,6 +21,11 @@ Route::get('/message', function () {
   return view('message');
 });
 
+
+Route::get('/home', function () {
+  return view('home');
+});
+
 Route::any('/upload','MessageController@index');
 
 
@@ -28,7 +33,6 @@ Route::any('/upload','MessageController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/home', 'HomeController@list')->name('home');
 // Route::get('/home', 'MessagesController@show')->name('home');
 
