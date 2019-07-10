@@ -18,8 +18,8 @@ class MessagesController extends Controller
     public function show($id) {
       $message = Message::findOrFail($id); // findOrFail 見つからなかった時の例外処理
 
-      $good = $post->goods()->where('user_id', Auth::user()->id)->first();
+      $good = $message->goods()->where('user_id', Auth::user()->id)->first();
 
-      return view('messages.show')->with(array('message' => $message, 'good' => $good));
+      return view('/home')->with(array('message' => $message, 'good' => $good));
     }
 }

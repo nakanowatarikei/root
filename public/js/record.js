@@ -154,8 +154,9 @@ function createDownloadLink(blob) {
       xhr.open("POST","upload",true);
       xhr.setRequestHeader('X-CSRF-Token', token);
       xhr.send(fd);
-      alert("エールを送信しました");
-
+	  alert("エールを送信しました");
+	//   window,history.back(-1);
+	
 
 
     }
