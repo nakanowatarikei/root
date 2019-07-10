@@ -11,7 +11,7 @@ class GoodsController extends Controller
 {
     public function store(Request $request, $messageId)
     {
-        Like::create(
+        Good::create(
           array(
             'user_id' => Auth::user()->id,
             'message_id' => $messageId

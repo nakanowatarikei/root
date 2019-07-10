@@ -844,6 +844,7 @@ class ComposerStaticInite21ce8774c1ceb16d7bf10a0c2cfadf2
         'Faker\\Provider\\it_IT\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/Payment.php',
         'Faker\\Provider\\it_IT\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/Person.php',
         'Faker\\Provider\\it_IT\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/PhoneNumber.php',
+        'Faker\\Provider\\it_IT\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/it_IT/Text.php',
         'Faker\\Provider\\ja_JP\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Address.php',
         'Faker\\Provider\\ja_JP\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Company.php',
         'Faker\\Provider\\ja_JP\\Internet' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/ja_JP/Internet.php',
