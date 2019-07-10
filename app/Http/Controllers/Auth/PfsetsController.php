@@ -32,7 +32,7 @@ class PfsetsController extends Controller
         $filename = $request->file->store('public/avatar');
 
         $user = User::find(auth()->id()); 
-        $user->avatar_filename = basename($filename);
+        $user->image = basename($filename);
         $user->save();
 
         return redirect('/home')->with('success', '保存しました。');
