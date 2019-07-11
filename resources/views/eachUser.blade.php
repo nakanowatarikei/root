@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">マイページ<a href ="/users">ユーザー覧<a></div>
+                <div class="card-header">{{$user->name}}さんのページ</div>
 
                 <div class="card-body">
                 <div class="jumbotron">
@@ -17,43 +17,43 @@
 
                     <!-- プロフィール上部 -->
                     <div style="display:flex; ">
-                        @if(Auth::user()->image == "")
+                        @if($user->image == "")
                             <img src="{{ asset('profile.png') }}" alt="">
                         @else
                             
                         @endif
                         
                         <div style="display:flex; align-items: center;">
-                            <h2>{{Auth::user()->name}}</h2>
+                            <h2>{{$user->name}}</h2>
                         </div>
                     </div><br>
-                    <p>{{Auth::user()->profile}}</p>
+                    <p>{{$user->profile}}</p>
 
                     <!-- SNSリンク -->
                     <!-- SNSリンクがnullであればグレースケール -->
                     <div>
-                        @if(Auth::user()->twitter == "")
-                        <a href="{{Auth::user() ->twitter}}"><img src="{{ asset('sns/twitter_g.png') }}" alt="twitter" id='twitter' class='sns'></a>
+                        @if($user->twitter == "")
+                        <a href="{{$user->twitter}}"><img src="{{ asset('sns/twitter_g.png') }}" alt="twitter" id='twitter' class='sns'></a>
                         @else
-                        <a href="{{Auth::user() ->twitter}}"><img src="{{ asset('sns/twitter.png') }}" alt="twitter" id='twitter' class='sns'></a>
+                        <a href="{{$user->twitter}}"><img src="{{ asset('sns/twitter.png') }}" alt="twitter" id='twitter' class='sns'></a>
                         @endif
 
-                        @if(Auth::user()->facebook == "")
-                        <a href="{{Auth::user() ->facebook}}"><img src="{{ asset('sns/facebook_g.png') }}" alt="facebook" id='facebook' class='sns'></a>
+                        @if($user->facebook == "")
+                        <a href="{{$user->facebook}}"><img src="{{ asset('sns/facebook_g.png') }}" alt="facebook" id='facebook' class='sns'></a>
                         @else
-                        <a href="{{Auth::user() ->facebook}}"><img src="{{ asset('sns/facebook.png') }}" alt="facebook" id='facebook' class='sns'></a>
+                        <a href="{{$user->facebook}}"><img src="{{ asset('sns/facebook.png') }}" alt="facebook" id='facebook' class='sns'></a>
                         @endif
 
-                        @if(Auth::user()->instagram == "")
-                        <a href="{{Auth::user() ->instagram}}"><img src="{{ asset('sns/instagram_g.png') }}" alt="instagram" id='instagram' class='sns'></a>
+                        @if($user->instagram == "")
+                        <a href="{{$user->instagram}}"><img src="{{ asset('sns/instagram_g.png') }}" alt="instagram" id='instagram' class='sns'></a>
                         @else
-                        <a href="{{Auth::user() ->instagram}}"><img src="{{ asset('sns/instagram.png') }}" alt="instagram" id='instagram' class='sns'></a>
+                        <a href="{{$user->instagram}}"><img src="{{ asset('sns/instagram.png') }}" alt="instagram" id='instagram' class='sns'></a>
                         @endif
 
-                        @if(Auth::user()->qiita == "")
-                        <a href="{{Auth::user() ->qiita}}"><img src="{{ asset('sns/qiita_g.png') }}" alt="qiita" id='qiita' class='sns'></a>
+                        @if($user->qiita == "")
+                        <a href="{{$user->qiita}}"><img src="{{ asset('sns/qiita_g.png') }}" alt="qiita" id='qiita' class='sns'></a>
                         @else
-                        <a href="{{Auth::user() ->qiita}}"><img src="{{ asset('sns/qiita.png') }}" alt="qiita" id='qiita' class='sns'></a>
+                        <a href="{{$user->qiita}}"><img src="{{ asset('sns/qiita.png') }}" alt="qiita" id='qiita' class='sns'></a>
                         @endif
                     </div><br>
 
@@ -86,7 +86,9 @@
     </div>
     
     <!-- 録音ボタン -->
-    
+    <div class="fixed-bottom">
+    <a href="/message/{{$user->id}}"><img src="{{ asset('record.png') }}" style="width:64px; height:64px; margin-left:60px; margin-bottom:30px;"></a>
+    </div>
 </div>
 @endsection
 

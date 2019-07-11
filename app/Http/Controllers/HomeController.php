@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Message;
 use App\Good;
+use App\User;
 use Auth;
 
 class HomeController extends Controller
@@ -27,10 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         return view('home');
     }
 
-    public function list(Request $request)
+    public function list()
     {
     # messageテーブルを取得
 
@@ -38,5 +40,22 @@ class HomeController extends Controller
     $goods = new Good;
     $good  = $goods->where('user_id', Auth::user()->id);
     return view('home', ['messages' => $messages, 'good' => $good]);
-}
+    }
+    public function listUsers()
+    {
+   
+
+    $users = DB::select('select * from users');
+    return view('user', ['users' => $users]);
+    }
+    public function selectUser($id)
+    {
+   
+
+    $users = new User;
+    $user  = $users->where('id', $id)->first();
+    $messages = new Message;
+    $message = $messages->where('receiver_id', $id)->get();
+    return view('eachUser', ['user' => $user, 'messages' => $message]);
+    }
 }

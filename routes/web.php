@@ -17,8 +17,8 @@ Route::get('/pfsets', function () {
 
 
 
-Route::get('/message', function () {
-  return view('message');
+Route::get('/message/{id}', function ($id) {
+  return view('message',['id' => $id]);
 });
 
 
@@ -26,9 +26,12 @@ Route::get('/home', function () {
   return view('home');
 });
 
-Route::any('/upload','MessageController@index');
+Route::post('message/upload','MessageController@index');
 
+Route::post('/message/{id}/','MessageController@index');
 
+Route::get('/users', 'HomeController@listUsers')->name('users');
+Route::get('/eachUser/{id}', 'HomeController@selectUser');
 
 Auth::routes();
 

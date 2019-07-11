@@ -20,6 +20,7 @@
               <ul style="list-style: none;">
                 <li id = "retake"></li>
               </ul>
+              <input type = "hidden" value ="{{$id}}" id  ="receiver_id">
             <button type="submit" class="btn btn-primary" id="abc" style="visibility:hidden;">エールを送る</button>
           </div>
         </div>

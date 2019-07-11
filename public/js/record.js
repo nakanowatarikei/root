@@ -46,7 +46,6 @@ function startRecording() {
 			create an audio context after getUserMedia is called
 			sampleRate might change after getUserMedia is called, like it does on macOS when recording through AirPods
 			the sampleRate defaults to the one set in your OS for your playback device
-
 		*/
 		audioContext = new AudioContext();
 
@@ -148,14 +147,16 @@ function createDownloadLink(blob) {
 		          console.log("Server returned: ",e.target.responseText);
 		      }
 		  };
-      var fd=new FormData();
-      var token = document.getElementsByName('csrf-token').item(0).content; 
-		  fd.append("audio_data",blob, filename);
+	  var fd=new FormData();
+	  var receiver = document.getElementById("receiver_id").value;
+	  var token = document.getElementsByName('csrf-token').item(0).content; 
+	 
+	  fd.append("audio_data",blob,filename);
+	  fd.append("receiver_id",receiver);
       xhr.open("POST","upload",true);
       xhr.setRequestHeader('X-CSRF-Token', token);
       xhr.send(fd);
 	  alert("エールを送信しました");
-	//   window,history.back(-1);
 	
 
 
